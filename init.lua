@@ -166,6 +166,10 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- [[ Custom Keymaps ]]
+
+vim.keymap.set({ 'i', 'v' }, 'jk', '<Esc>')
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
