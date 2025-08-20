@@ -618,6 +618,9 @@ require('lazy').setup({
         taplo = {},
         -- NOTE: if you're looking for what the expected name is, search the language in mason's repo
         jsonls = {},
+        pylsp = {},
+        ruff = {},
+        jedi_language_server = {},
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -684,7 +687,7 @@ require('lazy').setup({
         lua = { 'stylua' },
         nix = { 'alejandra' },
         -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
+        python = { 'ruff', 'black' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
