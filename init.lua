@@ -152,7 +152,7 @@ vim.o.splitbelow = true
 --   See `:help lua-options`
 --   and `:help lua-options-guide`
 vim.o.list = true
-vim.opt.listchars = { trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = '  ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
 vim.o.inccommand = 'split'
@@ -162,6 +162,9 @@ vim.o.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 5
+
+-- Set tab width to 4 characters
+vim.o.tabstop = 4
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
@@ -256,6 +259,10 @@ require('lazy').setup({
     opts = {},
     config = function()
       require('ibl').setup {
+        indent = {
+          char = '▏',
+          tab_char = '▏',
+        },
         scope = {
           show_start = false,
         },
