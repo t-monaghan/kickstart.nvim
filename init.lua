@@ -623,11 +623,13 @@ require('lazy').setup({
         gopls = {},
         nil_ls = {},
         taplo = {},
-        -- NOTE: if you're looking for what the expected name is, search the language in mason's repo
+        -- NOTE: if you're looking for what the expected name is, search the language in the below file
+        -- https://github.com/mason-org/mason-lspconfig.nvim/blob/1ec4da522fa49dcecee8d190efda273464dd2192/lua/mason-lspconfig/filetype_mappings.lua
         jsonls = {},
         pylsp = {},
         ruff = {},
         jedi_language_server = {},
+        yamlls = {},
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
