@@ -630,7 +630,10 @@ require('lazy').setup({
         ruff = {},
         jedi_language_server = {},
         yamlls = {},
-        -- pyright = {},
+        -- TODO: replace with basedpyright to follow working zed config
+        pyright = {},
+        terraformls = {},
+        tflint = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 
