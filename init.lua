@@ -623,6 +623,7 @@ require('lazy').setup({
         gopls = {},
         nil_ls = {},
         taplo = {},
+        ty = {},
         -- NOTE: if you're looking for what the expected name is, search the language in the below file
         -- https://github.com/mason-org/mason-lspconfig.nvim/blob/1ec4da522fa49dcecee8d190efda273464dd2192/lua/mason-lspconfig/filetype_mappings.lua
         jsonls = {},
@@ -630,8 +631,6 @@ require('lazy').setup({
         ruff = {},
         -- jedi_language_server = {},
         yamlls = {},
-        -- TODO: replace with basedpyright to follow working zed config
-        pyright = {},
         terraformls = {},
         tflint = {},
         -- rust_analyzer = {},
@@ -653,14 +652,13 @@ require('lazy').setup({
         },
       }
 
-      local lspconfig = require 'lspconfig'
-
       -- Loop through the servers in the `servers` table and configure them.
       for server_name, server_opts in pairs(servers) do
         -- Merge the server-specific options with the global capabilities
         server_opts.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server_opts.capabilities or {})
-        -- Call lspconfig's setup function for the server
-        lspconfig[server_name].setup(server_opts)
+        -- Configure and enable the LSP server (Nvim 0.11+)
+        vim.lsp.config(server_name, server_opts)
+        vim.lsp.enable(server_name)
       end
     end,
   },
@@ -699,7 +697,7 @@ require('lazy').setup({
         lua = { 'stylua' },
         nix = { 'alejandra' },
         -- Conform can also run multiple formatters sequentially
-        python = { 'ruff', 'black' },
+        python = { 'ruff' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
